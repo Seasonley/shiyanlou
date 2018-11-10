@@ -29,4 +29,24 @@ function createSID() {
     }
     return sid;
 }
+
+function getSession(req, res) {
+    var sid;
+    if (req.cookies.sid) {
+        sid = req.cookies.sid;
+    } else {
+        sid = createSID();
+        res.cookie('sid', sid);
+    }
+
+    var session;
+    if (sessions[sid]) {
+        session = sessions[sid];
+    } else {
+        session = new Session(sid);
+        sessions[sid] = session;
+    }
+
+    return session;
+}
 exports.getSession = getSession;
