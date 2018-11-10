@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        <%= title %>
+    </title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="/bower_components/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="/stylesheets/style.css" />
+    <script src="/bower_components/jquery/dist/jquery.min.js" type="text/javascript"></script>
+</head>
+
+<body>
+    <div id="container" class="container">
+
+        <a href="/">添加图片</a>
+        <!-- 打印出所有上传的图片 -->
+        <div>
+            <% imgs.forEach(function(img) { %>
+                <img src="<%= img %>" />
+                <% }); %>
+        </div>
+    </div>
+</body>
+
+</html>
