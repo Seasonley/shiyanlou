@@ -1,5 +1,4 @@
 node_modules
-*.pdf
 bower_components
 bootstrap
 coverage
